@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Banner from './Component/Banner';
 import Card from './Component/Card';
 import Footer from './Component/Footer';
+import Castomcarsor from './Component/Castomcarsor';
 // import ProductFilter from './Component/ProductFilter ';
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
 
   return (
     <div className="bg-gray-100">
+      <Castomcarsor></Castomcarsor>
       <div className="h-screen flex overflow-hidden bg-gray-200">
         {/* Sidebar */}
         <div

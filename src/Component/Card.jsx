@@ -1,8 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import { motion } from "framer-motion";
 
 const Card = () => {
 
     const product = [
+        {
+            id: 'modal6',
+            title: 'Kawai Toys',
+            imgSrc: 'https://i.ibb.co.com/nn4H8ZT/51r-CQVj7-KCL-AC-SL1000-1-removebg-preview.png',
+            price: 30,
+            category: "Music"
+        },
         {
             id: 'modal1',
             title: 'Itel Mobile',
@@ -19,6 +27,13 @@ const Card = () => {
             category: "Home"
         },
         {
+            id: 'modal8',
+            title: 'tool box ',
+            imgSrc: 'https://i.ibb.co.com/PQj36v9/a-HR0c-HM6-Ly9zd-GF0a-WMt-MDEu-ZGFy-YXou-Y29t-Lm-Jk-L3-Av-Nj-Rj-Mj-I0-Mz-Q3-Nj-Ey-Yz-Qz-MTlm-ZTg5-Mj.png',
+            price: 55.99,
+            category: "Tools"
+        },
+        {
             id: 'modal3',
             title: 'Guiter',
             imgSrc: 'https://i.ibb.co.com/tHGGvxS/a-HR0c-HM6-Ly9zd-GF0a-WMt-MDEu-ZGFy-YXou-Y29t-Lm-Jk-L3-Av-ZGMx-YTcy-MWFl-MDEz-ZGU2-Nm-Zh-Ym-Zm-Ym-Vj.png',
@@ -26,11 +41,26 @@ const Card = () => {
             category: "Music"
         },
         {
+            id: 'modal5',
+            title: 'Iphone Mobile',
+            imgSrc: 'https://i.ibb.co.com/ZMmW37d/Apple-i-Phone-16-Pro-Max-Black-Titanium-300x300-removebg-preview-removebg-preview.png',
+            price: 290,
+            category: "Electronics"
+
+        },
+        {
             id: 'modal4',
             title: 'Small Dril ',
             imgSrc: 'https://i.ibb.co.com/yS4P9F4/41-Nlm-W5k-YPL-400x400-removebg-preview.png',
             price: 25.99,
             category: "Tools"
+        },
+        {
+            id: 'modal7',
+            title: 'Pressure Cooker',
+            imgSrc: 'https://i.ibb.co.com/dPPqjds/a-HR0c-HM6-Ly9zd-GF0a-WMt-MDEu-ZGFy-YXou-Y29t-Lm-Jk-L3-Av-Mm-Mz-YWE0-Yz-Vl-ODgw-ZTcy-Mz-Vl-YWNi-Mj-A.png',
+            price: 10,
+            category: "Home"
         }
     ];
 
@@ -85,7 +115,8 @@ const Card = () => {
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10'>
                 {products.map(({ id, title, imgSrc, price, category }) => (
-                    <div key={id} className="bg-gray-800 p-3 flex flex-col gap-1 rounded-br-3xl" style={{ boxShadow: '1px 1px 50px #25A4DE' }}>
+                    <motion.div key={id}  whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }} className="bg-gray-800 p-3 flex flex-col gap-1 rounded-br-3xl" style={{ boxShadow: '1px 1px 50px #25A4DE' }}>
                         <div className="duration-500 contrast-50 rounded-md bg-gradient-to-bl from-black via-orange-900 to-indigo-600 hover:contrast-100">
                             <img className='h-[200px] mx-auto py-5' src={imgSrc} alt={title} />
                         </div>
@@ -116,7 +147,7 @@ const Card = () => {
                                 </div>
                             </dialog>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </div>
