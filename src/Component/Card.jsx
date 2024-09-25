@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from "framer-motion";
+import 'aos/dist/aos.css';
 
 const Card = () => {
 
@@ -115,11 +116,11 @@ const Card = () => {
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10'>
                 {products.map(({ id, title, imgSrc, price, category }) => (
-                    <motion.div key={id}  whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }} className="bg-gray-800 p-3 flex flex-col gap-1 rounded-br-3xl" style={{ boxShadow: '1px 1px 50px #25A4DE' }}>
-                        <div className="duration-500 contrast-50 rounded-md bg-gradient-to-bl from-black via-orange-900 to-indigo-600 hover:contrast-100">
+                    <div key={id} className="bg-gray-800 p-3 flex flex-col gap-1 rounded-br-3xl" style={{ boxShadow: '1px 1px 50px #25A4DE' }}>
+                        <motion.div whileHover={{ scale: 1.15 }}
+                            whileTap={{ scale: 0.12 }} className="duration-500 contrast-50 rounded-md bg-gradient-to-bl from-black via-orange-900 to-indigo-600 hover:contrast-100">
                             <img className='h-[200px] mx-auto py-5' src={imgSrc} alt={title} />
-                        </div>
+                        </motion.div>
                         <div className="flex flex-col gap-4">
                             <div className="flex flex-row justify-between">
                                 <div className="flex flex-col">
@@ -147,7 +148,7 @@ const Card = () => {
                                 </div>
                             </dialog>
                         </div>
-                    </motion.div>
+                    </div>
                 ))}
             </div>
         </div>
